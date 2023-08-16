@@ -1,0 +1,39 @@
+#!/usr/bin/python
+# Sheenam Pathak <sheenampatha@micron.com>
+
+DOCUMENTATION = r'''
+---
+module: win_git
+version_added: "1.0"
+short_description: Deploy software (or files) from git checkouts
+description:
+    - Deploy software (or files) from git checkouts
+    - SSH only
+notes:
+    - git for Windows need to be installed
+    - SSH only
+options:
+  repo_url:
+    description:
+      - address of the repository
+    required: true
+    aliases: [ name ]
+  dest_dir:
+    description:
+      - destination folder
+    required: true
+  branch:
+    description:
+      - branch to update / clone the repo
+    required: true
+    default: master
+author:
+- Sheenam Pathak
+'''
+
+EXAMPLES = r'''
+  win_git:
+    repo: "git hub url"
+    dest: "path/to/clone"
+    branch: master
+'''
